@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import MessageList from './messageList/MessageList';
 import MessageInput from './messageInput/MessageInput';
 import { v4 as uuidv4 } from 'uuid';
+import { SAMPLE_BOT_MARKDOWN_RESPONSE } from '@/const/sampleMessage';
 
 interface ChatbotProps {}
 
@@ -26,11 +27,11 @@ const Chatbot: React.FC<ChatbotProps> = () => {
       const newBotMessage: ChatMessage = {
         id: uuidv4(),
         type: 'SERVER',
-        content: 'This is a sample response from the chatbot!',
+        content: SAMPLE_BOT_MARKDOWN_RESPONSE,
       };
 
       addMessageToList(newBotMessage);
-    }, 3000);
+    }, 1000);
   };
 
   return (
