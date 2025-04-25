@@ -133,6 +133,6 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #00003133;
   cursor: pointer;
 }
