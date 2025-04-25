@@ -1,8 +1,21 @@
 {
   "name": "react-chatbot-uikit",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "description": "Pass",
+  "keywords": [
+    "react",
+    "chat",
+    "chatbot",
+    "ui",
+    "kit",
+    "component"
+  ],
+  "author": {
+    "name": "Pon Vignesh G",
+    "email": "ponvignesh.g@gmail.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
