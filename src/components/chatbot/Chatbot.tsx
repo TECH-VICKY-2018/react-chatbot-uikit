@@ -5,7 +5,9 @@ import MessageInput from './messageInput/MessageInput';
 import { v4 as uuidv4 } from 'uuid';
 import { SAMPLE_BOT_MARKDOWN_RESPONSE } from '@/const/sampleMessage';
 
-interface ChatbotProps {}
+interface ChatbotProps {
+  // We'll add customization props here later
+}
 
 const Chatbot: React.FC<ChatbotProps> = () => {
   const [messageList, setMessageList] = useState<ChatMessage[]>([]);
@@ -23,6 +25,7 @@ const Chatbot: React.FC<ChatbotProps> = () => {
 
     addMessageToList(newUserMessage);
 
+    // Simulate bot response after a delay
     setTimeout(() => {
       const newBotMessage: ChatMessage = {
         id: uuidv4(),
@@ -35,7 +38,7 @@ const Chatbot: React.FC<ChatbotProps> = () => {
   };
 
   return (
-    <div className="mx-auto flex max-w-md flex-col">
+    <div aria-label="chat-container" className="flex h-full w-full flex-col">
       <MessageList messageList={messageList} />
       <MessageInput onSendMessage={handleSendMessage} />
     </div>

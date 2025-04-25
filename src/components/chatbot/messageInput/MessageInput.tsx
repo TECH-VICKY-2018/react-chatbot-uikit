@@ -24,7 +24,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   };
 
   return (
-    <div className="relative flex w-full items-center gap-2 border-t py-2">
+    <div className="relative flex w-full items-center gap-2 py-2">
       <Input
         type="text"
         placeholder="Ask me something..."

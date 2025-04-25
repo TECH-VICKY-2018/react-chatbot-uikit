@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
-import { Button } from '@/components/ui/button';
 import Chatbot from './components/chatbot/Chatbot';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <Chatbot />
+    <div aria-label="parent-container" className="flex h-full w-full justify-center">
+      <div className="flex w-[50%]" aria-label="chatbot-parent">
+        <Chatbot />
+      </div>
     </div>
   );
 }

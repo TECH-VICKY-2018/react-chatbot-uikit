@@ -1,5 +1,5 @@
 import { ChatMessage } from '@/types/message';
-import React from 'react';
+import React, { useEffect, useRef } from 'react'; // Import useRef and useEffect
 import MessageItem from './messageItem/MessageItem';
 
 interface MessageListProps {
@@ -8,12 +8,20 @@ interface MessageListProps {
 
 const MessageList: React.FC<MessageListProps> = (props) => {
   const { messageList } = props;
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messageList]);
 
   return (
-    <div className="flex-col space-y-4 rounded-lg border p-4">
-      {messageList.map((message) => (
-        <MessageItem message={message} key={message.id} />
-      ))}
+    <div className="h-full overflow-x-hidden overflow-y-auto rounded-lg border p-4 custom-scrollbar">
+      <div className="flex flex-1 flex-col space-y-4">
+        {messageList.map((message) => (
+          <MessageItem message={message} key={message.id} />
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
     </div>
   );
 };
