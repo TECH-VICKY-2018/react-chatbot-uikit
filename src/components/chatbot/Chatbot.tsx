@@ -4,12 +4,18 @@ import MessageList from './messageList/MessageList';
 import MessageInput from './messageInput/MessageInput';
 import { v4 as uuidv4 } from 'uuid';
 import { SAMPLE_BOT_MARKDOWN_RESPONSE } from '@/const/sampleMessage';
+import { CustomAvatarProps } from '@/types/avatar';
 
 interface ChatbotProps {
-  // We'll add customization props here later
+  botAvatarProps?: CustomAvatarProps;
+  userAvatarProps?: CustomAvatarProps;
+  botMessageBgColor?: string | undefined;
+  userMessageBgColor?: string | undefined;
 }
 
-const Chatbot: React.FC<ChatbotProps> = () => {
+const Chatbot: React.FC<ChatbotProps> = (props) => {
+  const { botAvatarProps, userAvatarProps, botMessageBgColor, userMessageBgColor } = props;
+
   const [messageList, setMessageList] = useState<ChatMessage[]>([]);
 
   const addMessageToList = (newMessage: ChatMessage) => {
@@ -39,7 +45,13 @@ const Chatbot: React.FC<ChatbotProps> = () => {
 
   return (
     <div aria-label="chat-container" className="flex h-full w-full flex-col">
-      <MessageList messageList={messageList} />
+      <MessageList
+        messageList={messageList}
+        botAvatarProps={botAvatarProps}
+        userAvatarProps={userAvatarProps}
+        botMessageBgColor={botMessageBgColor}
+        userMessageBgColor={userMessageBgColor}
+      />
       <MessageInput onSendMessage={handleSendMessage} />
     </div>
   );
