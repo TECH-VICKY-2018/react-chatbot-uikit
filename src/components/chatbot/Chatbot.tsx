@@ -5,6 +5,7 @@ import MessageInput from './messageInput/MessageInput';
 import { v4 as uuidv4 } from 'uuid';
 import { SAMPLE_BOT_MARKDOWN_RESPONSE } from '@/const/sampleMessage';
 import { CustomAvatarProps } from '@/types/avatar';
+import styles from './Chatbot.module.css';
 
 interface ChatbotProps {
   botAvatarProps?: CustomAvatarProps;
@@ -44,7 +45,7 @@ const Chatbot: React.FC<ChatbotProps> = (props) => {
   };
 
   return (
-    <div aria-label="chat-container" className="flex h-full w-full flex-col">
+    <div aria-label="chat-container" className={styles.chatContainer}>
       <MessageList
         messageList={messageList}
         botAvatarProps={botAvatarProps}

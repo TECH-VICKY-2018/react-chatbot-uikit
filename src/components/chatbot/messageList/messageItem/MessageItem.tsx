@@ -5,6 +5,7 @@ import { TbUserCircle, TbSparkles } from 'react-icons/tb';
 import { motion } from 'framer-motion';
 import MessageRenderer from './messageRenderer/MessageRenderer';
 import { CustomAvatarProps } from '@/types/avatar';
+import styles from './MessageItem.module.css';
 
 interface MessageItemProps {
   messageId: ChatMessage['id'];
@@ -35,26 +36,26 @@ const MessageItem: React.FC<MessageItemProps> = (props) => {
       initial={{ opacity: 0, x: isServer ? -10 : 10 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
-      className={`flex w-full items-start px-4 py-2 ${isServer ? 'justify-start' : 'justify-end'}`}
+      className={`${styles.messageContainer} ${isServer ? styles.serverMessage : styles.clientMessage}`}
       aria-label={`${messageType}-message-${messageId}`}
     >
-      <div className={`flex max-w-[90%] ${isServer ? 'flex-row' : 'flex-row-reverse'} gap-3`}>
-        <Avatar className="h-10 w-10">
+      <div className={`${styles.messageWrapper} ${isServer ? styles.messageWrapperServer : styles.messageWrapperClient}`}>
+        <Avatar className={styles.avatar}>
           <AvatarImage src={avatarProps?.src} />
           <AvatarFallback>
             {avatarProps?.fallback ? (
               avatarProps.fallback
             ) : isServer ? (
-              <TbSparkles className="h-full w-full text-purple-500" />
+              <TbSparkles className={`${styles.icon} ${styles.serverIcon}`} />
             ) : (
-              <TbUserCircle className="h-full w-full text-blue-600" />
+              <TbUserCircle className={`${styles.icon} ${styles.clientIcon}`} />
             )}
           </AvatarFallback>
         </Avatar>
 
         <div
-          className={`overflow-hidden rounded-2xl px-4 py-2 text-left text-sm leading-relaxed break-words whitespace-pre-wrap shadow-md ${
-            isServer ? `rounded-bl-none text-gray-800` : `rounded-br-none text-white`
+          className={`${styles.messageBubble} ${
+            isServer ? styles.serverMessageBubble : styles.clientMessageBubble
           }`}
           style={{
             backgroundColor: isServer ? botMessageBgColor : userMessageBgColor,

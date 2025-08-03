@@ -1,0 +1,32 @@
+.messageListContainer {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af #f3f4f6; /* gray-400 and gray-100 */
+}
+
+.messageListContainer::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.messageListContainer::-webkit-scrollbar-track {
+  background: #f3f4f6; /* gray-100 */
+  border-radius: 3px;
+}
+
+.messageListContainer::-webkit-scrollbar-thumb {
+  background-color: #9ca3af; /* gray-400 */
+  border-radius: 3px;
+}
+
+.messageList {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem; /* space-y-4 equivalent */
+}
