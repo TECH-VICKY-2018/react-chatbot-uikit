@@ -1,0 +1,68 @@
+.messageContainer {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+}
+
+.serverMessage {
+  justify-content: flex-start;
+}
+
+.clientMessage {
+  justify-content: flex-end;
+}
+
+.messageWrapper {
+  display: flex;
+  max-width: 90%;
+  gap: 0.75rem;
+}
+
+.messageWrapperServer {
+  flex-direction: row;
+}
+
+.messageWrapperClient {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.messageBubble {
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.serverMessageBubble {
+  border-bottom-left-radius: 0;
+  color: #1f2937; /* gray-800 */
+}
+
+.clientMessageBubble {
+  border-bottom-right-radius: 0;
+  color: white;
+}
+
+.icon {
+  height: 100%;
+  width: 100%;
+}
+
+.serverIcon {
+  color: #8b5cf6; /* purple-500 */
+}
+
+.clientIcon {
+  color: #2563eb; /* blue-600 */
+}

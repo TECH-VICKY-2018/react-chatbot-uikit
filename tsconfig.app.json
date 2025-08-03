@@ -10,6 +10,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "declaration": true,
+    "declarationDir": "./dist",
 
     /* Bundler mode */
     "moduleResolution": "bundler",

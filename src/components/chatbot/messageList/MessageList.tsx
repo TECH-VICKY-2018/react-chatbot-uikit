@@ -2,6 +2,7 @@ import { ChatMessage } from '@/types/message';
 import React, { useEffect, useRef } from 'react';
 import MessageItem from './messageItem/MessageItem';
 import { CustomAvatarProps } from '@/types/avatar';
+import styles from './MessageList.module.css';
 
 interface MessageListProps {
   messageList: ChatMessage[];
@@ -21,8 +22,8 @@ const MessageList: React.FC<MessageListProps> = (props) => {
   }, [messageList]);
 
   return (
-    <div className="custom-scrollbar h-full overflow-x-hidden overflow-y-auto rounded-lg border p-4">
-      <div className="flex flex-1 flex-col space-y-4">
+    <div className={styles.messageListContainer}>
+      <div className={styles.messageList}>
         {messageList.map((message) => (
           <MessageItem
             key={message.id}

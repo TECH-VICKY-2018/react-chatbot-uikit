@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.input {
+  padding-right: 5rem; /* pr-20 equivalent */
+}
+
+.buttonsContainer {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  display: flex;
+  transform: translateY(-50%);
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.clearButton {
+  height: 1.75rem; /* h-7 */
+  width: 1.75rem; /* w-7 */
+  color: #6b7280; /* text-gray-500 */
+}
+
+.sendButton {
+  height: 1.75rem; /* h-7 */
+  width: 1.75rem; /* w-7 */
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+}
+
+.icon {
+  height: 1rem; /* h-4 */
+  width: 1rem; /* w-4 */
+}
+
+.sendIcon {
+  color: #3b82f6; /* text-blue-500 */
+}
+
+/* Button hover states */
+.clearButton:hover {
+  background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+.sendButton:hover {
+  background-color: #eff6ff; /* bg-blue-50 */
+  border-color: #3b82f6; /* border-blue-500 */
+}
